@@ -1,0 +1,88 @@
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Awareness</title>
+    <link rel="stylesheet" href="aware.css">
+    <link rel="stylesheet" href="quote.css">
+    <link rel="icon" href="images/logo.png">
+
+</head>
+
+<body>
+    <h1>MENTAL HEALTH AWARENESS</h1>
+    <div class="container">
+        <div class="images "><img src="images/anxiety1.png "><img src="images/bipolar1.png "><img src="images/depression1.png "><img src="images/scared.png "><img src="images/schizophrenia1.png "><img src="images/stressed.png "><img src="images/panic.png
+        "><img src="images/download.png "></div>
+    </div>
+    <section class="quotes">
+        <h2>GET MOTIVATED BY THE QUOTES GIVEN BY INSIPIRING PERSONS!!
+            <BR>STAY POSITIVE!!</h2>
+        <div id="container">
+            <button id="btn">Take your Affirmation!</button>
+            <div id="output">Press the button to generate a Quote!</div>
+        </div>
+    </section>
+    <div class="section2" id="audio-section">
+
+        <div class="player1">
+            <div class="imgbox1">
+                <img src="images/audioposter1.jpg" alt="Audio Poster">
+            </div>
+            <audio controls loop> 
+                <source src="images/audio1.mp3" type="audio/mp3">
+              </source>
+            </audio>
+        </div>
+
+        <div class="player1">
+            <div class="imgbox1">
+                <img src="images/audioposter2.jpg" alt="Audio Poster">
+            </div>
+            <audio controls loop> 
+              <source src="images/audio2.mpeg" type="audio/mpeg">
+            </source>
+          </audio>
+        </div>
+
+    </div>
+    </section>
+    <section class="video-section">
+        <h6>ENTERTAIN YOURSELF BY WATCHING VIDEO</h6> <iframe id="video" src=" https://www.youtube.com/embed/aIIEI33EUqI " height="350px " width="700px " frameborder="0 " allowfullscreen>
+            </iframe>
+    </section>
+    <section class="video-section">
+        <h6>MENTAL HEALTH AWARENESS VIDEO</h6> <iframe id="video" src=" https://www.youtube.com/embed/rkZl2gsLUp4" height="350px " width="700px " frameborder="0 " allowfullscreen>
+            </iframe>
+    </section>
+    <script>
+        let btn = document.getElementById('btn');
+        let output = document.getElementById('output');
+        let quotes = ['“What mental health needs is more sunlight more candor and more unashamed conversation.”–Glenn Close',
+            '“Mental health is not a destination but a process.It\’ s about how you drive not where you\'re going.”–Noam Shpance',
+            '“Increasing the strength of our minds is the only way to reduce the difficulty of life.”―Mokokoma Mokhonoana',
+            '"You can\’t control everything.Sometimes you just need to relax and have faith that things will work out.Let go a little and just life happen.”—Kody Keplinger ',
+            '“You don\’ t have to control your thoughts.You just have to stop letting them control you.”—Dan Millman',
+            '“Life is like a piano;the white keys represent happiness and the black show sadness.But as you go through life\’s journey, remember that the black keys also create music.”—Ehssan',
+            '“There is hope, even when your brain tells you there isn\’t.” — John Green',
+            '“Happiness can be found even in the darkest of times, if one only remembers to turn on the light.” — Albus Dumbledore',
+            '“Let your story go. Allow yourself to be present with who you are right now.” – Russ Kyle',
+            '“My dark days made me strong. Or maybe I already was strong, and they made me prove it.” — Emery Lord',
+            '“It\’s up to you today to start making healthy choices. Not choices that are just healthy for your body, but healthy for your mind.”― Steve Maraboli',
+            '“Self-esteem is as important to our well-being as legs are to a table. It is essential for physical and mental health and for happiness.” –  Louise Hart',
+            '“You have to quit confusing a madness with a mission.” ― Flannery O\’Connor',
+            '“To think too much is a disease.” ― Fyodor Dostoyevsky',
+            '“Don’t let your struggle become your identity.” – Unknown',
+            '"Sometimes the people around you won\’t understand your journey.They don\’t need to, it\’s not for them.”—Joubert Botha ',
+            '“You don\’t have to be positive all the time.It\’s perfectly okay to feel sad, angry, annoyed, frustrated, scared and anxious.Having feelings doesn\’t make you a negative person.It makes you human.”—Lori Deschene'
+        ];
+        btn.addEventListener('click', function() {
+            var randomQuote = quotes[Math.floor(Math.random() * quotes.length)]
+            output.innerHTML = randomQuote;
+        })
+    </script>
+</body>
+
+</html>

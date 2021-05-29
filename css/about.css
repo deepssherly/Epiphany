@@ -1,0 +1,80 @@
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600;700&display=swap');
+* {
+    box-sizing: border-box;
+    padding: 0;
+    margin: 0;
+}
+
+body {
+    font-family: 'Playfair Display', serif;
+    display: grid;
+    background-color: rgb(245, 142, 160);
+    align-content: center;
+    min-height: 100vh;
+}
+
+section {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    min-height: 90vh;
+    width: 85vw;
+    margin: 0 auto;
+}
+
+.image {
+    background: url("images/about.jpg") center/cover no-repeat;
+    height: 60%;
+    width: 60%;
+    padding: 10px;
+    border-radius: 80%;
+    background-position: center;
+    margin-top: 15%;
+    box-shadow: 0 0 20px #0c0c0c;
+}
+
+h1 {
+    position: absolute;
+    bottom: 130px;
+    left: 220px;
+    color: rgb(8, 8, 8);
+    font-family: Georgia, 'Times New Roman', Times, serif;
+}
+
+.content {
+    background: rgb(167, 160, 160);
+    border-style: groove;
+    border-radius: 10%;
+    box-shadow: 0 0 20px #0a0a0a;
+    border-color: rgb(10, 10, 10);
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    align-items: center;
+}
+
+.content h2 {
+    text-transform: uppercase;
+    font-size: 36px;
+    letter-spacing: 2px;
+    opacity: 0.9;
+    margin-bottom: 15px;
+}
+
+.content span {
+    height: 3.5px;
+    width: 280px;
+    background: rgb(14, 13, 13);
+    margin: 10px 0;
+}
+
+.content p {
+    padding-bottom: 15px;
+    font-weight: 500;
+    opacity: 0.7;
+    width: 60%;
+    text-align: center;
+    margin: 0 auto;
+    line-height: 2;
+    color: rgb(0, 0, 0);
+    word-spacing: 2px;
+}

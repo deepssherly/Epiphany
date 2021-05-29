@@ -1,0 +1,272 @@
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mental awareness</title>
+    <link rel="icon" href="images/logo.png">
+    <style type="text/css">
+        nav {
+            display: flex;
+            padding: 2% 6%;
+            justify-content: space-between;
+            align-items: center;
+        }
+        
+        nav img {
+            width: 100px;
+        }
+        
+        .nav-links {
+            flex: 1;
+            text-align: right;
+        }
+        
+        .nav-links ul li {
+            list-style: none;
+            display: inline-block;
+            padding: 8px 12px;
+            position: relative;
+        }
+        
+        .nav-links ul li a {
+            color: black;
+            text-decoration: none;
+            font-size: 18px;
+            font-weight: 600px;
+        }
+        
+        .nav-links ul li::after {
+            content: '';
+            width: 0%;
+            height: 2px;
+            background: rgb(1, 46, 38);
+            display: block;
+            margin: auto;
+            transition: 0.5s;
+        }
+        
+        .nav-links ul li:hover::after {
+            width: 100%;
+        }
+        
+        .what {
+            background-image: url("images/banner/about.jpg");
+            background-position: center;
+            background-size: cover;
+            position: relative;
+            opacity: 0.85;
+        }
+        
+        .what h1 {
+            font-size: 45px;
+            font-weight: 600;
+            text-align: right;
+            margin: 30px 50px 50px;
+            color: #920753;
+            text-decoration: underline;
+            text-shadow: 2px 2px;
+        }
+        
+        .what-row h2 {
+            font-size: 45px;
+            font-weight: 600;
+            text-align: right;
+            color: rgb(96, 6, 148);
+            word-spacing: 5px;
+            margin: 9px 25px 40px;
+        }
+        
+        .what-row p {
+            font-size: 30px;
+            font-weight: 600;
+            margin: 9px 25px 40px;
+            text-align: right;
+            color: rgb(27, 26, 26);
+            word-spacing: 4px;
+        }
+        
+        .more h3 {
+            text-align: center;
+            font-size: 60px;
+            font-weight: 350px;
+            color: rgb(180, 100, 8);
+        }
+        
+        .button {
+            background-color: #cc6708;
+            border: none;
+            color: white;
+            padding: 15px 32px;
+            text-align: center;
+            text-decoration: none;
+            font-size: 40px;
+        }
+        
+        .button:hover {
+            background-color: darkgray;
+            color: black;
+        }
+        
+        .click {
+            background-position: center;
+            background-size: cover;
+            position: relative;
+            opacity: 0.75;
+        }
+        
+        .column {
+            float: left;
+            padding: 10px;
+            height: 1060px;
+            box-sizing: border-box;
+        }
+        
+        .left {
+            width: 25%;
+        }
+        
+        .right {
+            width: 75%;
+        }
+        
+        h3,
+        h4 {
+            color: black;
+            font-size: 40px;
+            font-weight: 500;
+            text-align: center;
+        }
+        
+        .left,
+        .right p {
+            font-size: 28px;
+            font-weight: 300;
+            color: rgb(189, 8, 8);
+        }
+        
+        #slider {
+            overflow: hidden;
+        }
+        
+        #slider figure {
+            position: relative;
+            width: 500%;
+            margin: 0;
+            left: 0;
+            animation: 20s slider infinite;
+        }
+        
+        #slider figure img {
+            width: 20%;
+            float: left;
+            opacity: 0.95;
+        }
+        
+        @keyframes slider {
+            0% {
+                left: 0;
+            }
+            20% {
+                left: 0;
+            }
+            25% {
+                left: -100%;
+            }
+            45% {
+                left: -100%;
+            }
+            50% {
+                left: -200%;
+            }
+            70% {
+                left: -200%;
+            }
+            75% {
+                left: -300%;
+            }
+            95% {
+                left: -300%;
+            }
+            100% {
+                left: -400%;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <div id="slider">
+        <figure>
+            <img src="images/banner/mhm-web-banner.png" width="850px" height="450px">
+            <img src="images/banner/down.jpg" width="850px" height="450px">
+            <img src="images/banner/ban.png" width="850px" height="450px">
+            <img src="images/banner/mentkl.jpg" width="850px" height="450px">
+            <img src="images/banner/mhm-web-banner.png" width="850px" height="450px"></figure>
+    </div>
+    <section class="what " id="what-section">
+        <h1>What is Mental health all what?</h1>
+        <div class="what-row ">
+            <h2>Mental health…is not a destination,<br> but a process!<br> It’s about how you drive,<br> not where you’re going</h2>
+            <p><i>“Mental health is a state of well-being in which  <br>an individual realizes his or her own abilities,<br>can cope with the normal stresses of life, <br>can work productively, and is able to make<br>a contribution to his or her community.”</i></p>
+        </div>
+    </section>
+    <section class="more">
+        <h3>Learn more about Mental Health Issues ~~ <a href="#click-it" class="button">Click</a></h3>
+    </section>
+    <section class="click" id="click-it">
+        <div class="row">
+            <div class="column left" style="background-color:#aaa;">
+                <h3><b>MENTAL DISORDERS</b></h3>
+
+                <p>1.Bipolar disorder</p>
+                <br>
+                <p>2.Persistent depressive disorder</p>
+                <br>
+                <br>
+
+                <p>3.Obsessive-compulsive disorder</p>
+                <br>
+                <p>4.Post-traumatic stress disorder (PTSD)</p>
+                <br>
+                <br>
+                <p>5.Schizophreniar</p>
+                <br>
+                <br>
+                <p>6.Social anxiety disorder</p>
+            </div>
+            <div class="column right" style="background-color:#bbb;">
+                <h4>
+                    <b>ABOUT</b>
+                </h4>
+
+
+                <p>Bipolar disorder is a chronic mental illness that affects about 2.6 percent of Americans each year. It is characterized by episodes of energetic, manic highs and extreme, sometimes depressive lows.</p>
+                <br>
+                <p>Persistent depressive disorder is a chronic type of depression. It is also known as dysthymia. While dysthymic depression isn’t intense, it can interfere with daily life.
+                </p>
+                <br>
+
+                <p>Obsessive-compulsive disorder (OCD) causes constant and repetitive thoughts, or obsessions. These thoughts happen with unnecessary and unreasonable desires to carry out certain behaviors, or compulsions.
+                </p>
+                <br>
+                <p>Post-traumatic stress disorder (PTSD) is a mental illness that’s triggered after experiencing or witnessing a traumatic event. Experiences that can cause PTSD can range from extreme events, like war and national disasters, to verbal or
+                    physical abuse.
+                </p>
+                <br>
+
+                <p>Schizophrenia impairs a person’s perception of reality and the world around them. It interferes with their connection to other people. It’s a serious condition that needs treatment.
+                </p>
+                <br>
+                <p>Social anxiety disorder, sometimes called social phobia, causes an extreme fear of social situations. People with social anxiety may become very nervous about being around other people. They may feel like they’re being judged.
+                </p>
+            </div>
+        </div>
+
+    </section>
+</body>
+
+</html>
+
+</html>

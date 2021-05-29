@@ -1,0 +1,325 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="icon" href="images/logo.png">
+    <!DOCTYPE html>
+    <html lang="en">
+
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Document</title>
+        <style>
+            /* (A) WRAPPER */
+            
+            #quizWrap {
+                max-width: 600px;
+                margin: 200px auto;
+            }
+            
+            h1 {
+                text-align: center;
+                color: #fafafa;
+            }
+            /* (B) QUESTION */
+            
+            #quizQn {
+                padding: 20px;
+                background: #cd52dd;
+                color: #fff;
+                font-size: 24px;
+                border-radius: 10px;
+            }
+            /* (C) ANSWERS */
+            
+            #quizAns {
+                margin: 10px 0;
+                display: grid;
+                grid-template-columns: auto auto;
+                grid-gap: 10px;
+            }
+            
+            #quizAns input[type=radio] {
+                display: none;
+            }
+            
+            #quizAns label {
+                background: #fafafa;
+                border: 1px solid #eee;
+                border-radius: 10px;
+                padding: 10px;
+                font-size: 20px;
+                cursor: pointer;
+                text-align: center;
+            }
+            
+            #quizAns label.correct {
+                background: #eec4ff;
+                border: 1px solid #97177b;
+            }
+            
+            #quizAns label.wrong {
+                background: #eec4ff;
+                border: 1px solid #97177b;
+            }
+            /* (D) BODY... DOES NOT QUITE MATTER */
+            
+            html,
+            body {
+                background-image: url("images/p4.jpg");
+                background-attachment: fixed;
+                background-repeat: no-repeat;
+                background-size: cover;
+                font-family: arial, sans-serif;
+                opacity: 0.85;
+            }
+        </style>
+        <script>
+            var quiz = {
+                // (A) PROPERTIES 
+                // (A1) QUESTIONS & ANSWERS
+                // Q = QUESTION, O = OPTIONS, A = CORRECT ANSWER
+                data: [{
+                    q: "Are you suffering from feelings of sadness, hopelessness or emptiness?",
+                    o: [
+                        "Never",
+                        "Occasionally",
+                        "Often (once a week or more)",
+                        "Every day"
+                    ],
+                    a: 0 // arrays start with 0, so answer is 70 meters
+                }, {
+                    q: "Do you find it hard to find pleasure in activities you used to enjoy?",
+                    o: [
+                        "Often",
+                        "No",
+                        "Sometimes",
+                        "Ocassionally"
+                    ],
+                    a: 1
+                }, {
+                    q: "Has your appetite changed?",
+                    o: [
+                        "Yes - I don’t feel like eating as often or as much as I used to",
+                        "Sometimes",
+                        "Never",
+                        "Ocassionally"
+                    ],
+                    a: 2
+                }, {
+                    q: "Are you lacking Motivation?",
+                    o: [
+                        "Yes",
+                        "No",
+                        "Sometimes",
+                        "Ocassionally"
+                    ],
+                    a: 1
+                }, {
+                    q: "Do you feel guilty or tearful for no reason?",
+                    o: [
+                        "Always",
+                        "Frequently",
+                        "Sometimes",
+                        "Never"
+                    ],
+                    a: 3
+                }, {
+                    q: "Are you having trouble getting to sleep and staying asleep? Or are you finding it hard to get up in the morning?",
+                    o: [
+                        "Always",
+                        "Often",
+                        "Sometimes",
+                        "Never"
+                    ],
+                    a: 3
+                }, {
+                    q: "Have you had thoughts about harming yourself or ending your life?",
+                    o: [
+                        "Always",
+                        "Often",
+                        "Sometimes",
+                        "Never"
+                    ],
+                    a: 3
+                }, {
+                    q: "Do you find yourself avoiding friends and family?",
+                    o: [
+                        "Yes",
+                        "Often",
+                        "Sometimes",
+                        "Never"
+                    ],
+                    a: 3
+                }, {
+                    q: "Trouble concentrating on things, such as reading the newspaper or watching television",
+                    o: [
+                        "Nearly Every Day",
+                        "More than Half the days",
+                        "Nearly",
+                        "Never"
+                    ],
+                    a: 3
+                }, {
+                    q: "How often have you been bothered by worrying too much about different things over the last two weeks?",
+                    o: [
+                        "Nearly Every Day",
+                        "More than Half the days",
+                        "Nearly",
+                        "Never"
+
+                    ],
+                    a: 3,
+
+                }, {
+                    q: "How often have you been bothered by having trouble relaxing over the last two weeks?",
+                    o: [
+                        "Nearly Every Day",
+                        "More than Half the days",
+                        "Nearly",
+                        "Never"
+                    ],
+                    a: 3
+                }, {
+                    q: "How often have you been bothered by being so restless that it is hard to sit still over the last two weeks?",
+                    o: [
+                        "Nearly Every Day",
+                        "More than Half the days",
+                        "Nearly",
+                        "Never"
+
+                    ],
+                    a: 3
+                }, {
+                    q: "Do you feel guilty or tearful for no reason?",
+                    o: [
+                        "Nearly Every Day",
+                        "More than Half the days",
+                        "Nearly",
+                        "Never"
+                    ],
+                    a: 3
+                }, {
+                    q: "How often have you been bothered by becoming easily annoyed or irritable over the last two weeks?",
+                    o: [
+                        "Nearly Every Day",
+                        "More than Half the days",
+                        "Nearly",
+                        "Never"
+                    ],
+                    a: 3
+                }, {
+                    q: "Moving or speaking so slowly that other people could have noticed. Or the opposite -- being so fidgety or restless that you have been moving around a lot more than usual",
+                    o: [
+                        "Nearly Every Day",
+                        "More than Half the days",
+                        "Nearly",
+                        "Never"
+                    ],
+                    a: 3
+                }, ],
+
+                // (A2) HTML ELEMENTS
+                hWrap: null, // HTML quiz container
+                hQn: null, // HTML question wrapper
+                hAns: null, // HTML answers wrapper
+
+                // (A3) GAME FLAGS
+                now: 0, // current question
+                score: 0, // current score
+
+                // (B) INIT QUIZ HTML
+                init: function() {
+                    // (B1) WRAPPER
+                    quiz.hWrap = document.getElementById("quizWrap");
+
+                    // (B2) QUESTIONS SECTION
+                    quiz.hQn = document.createElement("div");
+                    quiz.hQn.id = "quizQn";
+                    quiz.hWrap.appendChild(quiz.hQn);
+
+                    // (B3) ANSWERS SECTION
+                    quiz.hAns = document.createElement("div");
+                    quiz.hAns.id = "quizAns";
+                    quiz.hWrap.appendChild(quiz.hAns);
+
+                    // (B4) GO!
+                    quiz.draw();
+                },
+
+                // (C) DRAW QUESTION
+                draw: function() {
+                    // (C1) QUESTION
+                    quiz.hQn.innerHTML = quiz.data[quiz.now].q;
+
+                    // (C2) OPTIONS
+                    quiz.hAns.innerHTML = "";
+                    for (let i in quiz.data[quiz.now].o) {
+                        let radio = document.createElement("input");
+                        radio.type = "radio";
+                        radio.name = "quiz";
+                        radio.id = "quizo" + i;
+                        quiz.hAns.appendChild(radio);
+                        let label = document.createElement("label");
+                        label.innerHTML = quiz.data[quiz.now].o[i];
+                        label.setAttribute("for", "quizo" + i);
+                        label.dataset.idx = i;
+                        label.addEventListener("click", quiz.select);
+                        quiz.hAns.appendChild(label);
+                    }
+                },
+
+                // (D) OPTION SELECTED
+                select: function() {
+                    // (D1) DETACH ALL ONCLICK
+                    let all = quiz.hAns.getElementsByTagName("label");
+                    for (let label of all) {
+                        label.removeEventListener("click", quiz.select);
+                    }
+                    // (D2) CHECK IF CORRECT
+                    let correct = this.dataset.idx == quiz.data[quiz.now].a;
+                    if (correct) {
+                        quiz.score++;
+                        this.classList.add("correct");
+                    } else {
+                        this.classList.add("wrong");
+                    }
+
+                    // (D3) NEXT QUESTION OR END GAME
+                    quiz.now++;
+                    setTimeout(function() {
+                        if (quiz.now < quiz.data.length) {
+                            quiz.draw();
+                        } else {
+                            if (quiz.score == 15) {
+                                quiz.hQn.innerHTML = `You are Mentally Healthy<img src="images/smiley-face-icegif-3.gif" width="100" height="100" style="vertical-align:middle">`;
+                                quiz.hAns.innerHTML = "";
+                            } else if (quiz.score > 0 && quiz.score < 15) {
+                                quiz.hQn.innerHTML = `You are having some symptoms of depression <img src="images/sad.gif" width="100" height="100" style="vertical-align:middle">`;
+                                quiz.hAns.innerHTML = "";
+                            } else {
+                                quiz.hQn.innerHTML = `You are Mentally Disturbed <img src="images/saddest.gif" width="100" height="100" style="vertical-align:middle">`;
+                                quiz.hAns.innerHTML = "";
+
+                            }
+                        }
+                    }, 1000);
+                }
+            };
+            window.addEventListener("load", quiz.init);
+        </script>
+    </head>
+
+    <body>
+        <!-- (B) QUIZ CONTAINER -->
+        <h1> SELF ANALYSIS </h1>
+        <div id="quizWrap"></div>
+    </body>
+
+    </html>
