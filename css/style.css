@@ -29,7 +29,6 @@ nav {
     justify-content: space-between;
     align-items: center;
     background-color: rgb(184, 176, 176);
-    position: fixed;
     width: 100%;
 }
 
