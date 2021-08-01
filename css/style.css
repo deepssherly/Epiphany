@@ -15,13 +15,13 @@
 
 .image {
     float: right;
-    margin-top: 80px;
+    margin-top: 70px;
     margin-right: 50px;
 }
 
 .image img {
     width: 680px;
-    height: 650px;
+    height: 630px;
 }
 
 nav {
